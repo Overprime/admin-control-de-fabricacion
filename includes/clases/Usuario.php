@@ -94,7 +94,7 @@ $sql= $db->query("UPDATE usuario SET nombres='$this->nombres',
 	area_idarea='$this->area_idarea',permiso='$this->permiso'
 WHERE idusuario='$this->idusuario'");
 echo "<script>
-       window.location='/admin-control-de-fabricacion/consulta/usuario';
+       window.location='/admin-control-de-fabricacion/editar/creacion-de-usuario?/='+$this->idusuario;
       </script>";
 }
 
