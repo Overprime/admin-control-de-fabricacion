@@ -24,7 +24,7 @@ $Permiso=$fila['permiso'];
 
 
 $template->assign(array('Id'=>$id,'Nombres'=>$Nombres,'Apellidos'=>$Apellidos,
-'Dni'=>$Dni,'Estado'=>$Estado,'Tipo'=>$Tipo,'Sueldo'=>$Sueldo));
+'Dni'=>$Dni,'Estado'=>$Estado,'Tipo'=>$Tipo,'Sueldo'=>$Sueldo,'Permiso'=>$Permiso));
 
 ?>
 

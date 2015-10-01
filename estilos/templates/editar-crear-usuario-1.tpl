@@ -61,17 +61,17 @@ USUARIO
 
 
 <div class="form-group">
-<label>ACTIVAR CAMBIO DE FECHA</label>
+<label>CAMBIO DE FECHA DE TRABAJO</label>
 <select name="permiso" class="form-control">
 <option value="{$Permiso}">
 {if $Permiso eq 1}
-NO
+DESACTIVADO
  {else}
-SI
+ACTIVADO
 {/if}
 </option>
-<option value="2">SI</option>
-<option value="1">NO</option>
+<option value="2">ACTIVAR</option>
+<option value="1">DESACTIVAR</option>
 </select>
 </div>	
 
