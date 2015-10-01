@@ -1,0 +1,24 @@
+.t11{
+font-size: 11px;
+
+}
+
+.t12{
+font-size: 12px;
+
+}
+
+
+
+/*inicio estilos para boton exportar a excel*/
+.botonExcel
+{
+cursor:pointer;
+}
+
+.tamano
+{
+font-size: 40px;
+}
+/*fin estilos para boton exportar a excel*/
+
