@@ -101,7 +101,7 @@ $fila = $result->fetch_object();
 <td  style="mso-number-format:'@'"><?php echo $fila->area?></td>
 <td  style="mso-number-format:'@'"><?php echo $fila->ot ?></td>
 <td  style="mso-number-format:'@'"><?php echo $fila->cencos ?></td>
-<td>  
+<td  style="mso-number-format:'@'">  
 <?php 
 if ($fila->cencos=="010101")
  {
@@ -118,7 +118,7 @@ else
 ?>
 
 </td>
-<td>
+<td  style="mso-number-format:'@'">
 <?php 
 if ($fila->cencos=="010101")
  {
