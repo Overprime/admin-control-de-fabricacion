@@ -52,3 +52,9 @@
 <label>BONO DE PUNTUALIDAD</label>
 <input type="number" name="bono"  min="1" step="any" class="form-control" >
 </div>
+
+
+<input type="hidden" name="tipo" value="{$Tipo}">
+
+
+<input type="hidden" name="id" value="{$Id}">

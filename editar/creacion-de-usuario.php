@@ -5,6 +5,8 @@ $db = new Conexion();//clase de conexion
 $fecha = new Fecha($_SESSION['id'],'');//clase  fecha de progreso
 $id=$_GET['/'];
 
+
+
 /*Generar la consulta para obtener ot,proceso,clasificacion*/
 $sql= $db->query("SELECT u.idusuario,u.nombres,u.apellidos,u.dni,u.estado,u.tipo,
 u.area_idarea,a.descripcion,a.idarea,u.permiso FROM usuario as u INNER JOIN area as a  ON 
@@ -294,7 +296,7 @@ $i=$i+1;
 
 </body>
 
-<!-- inicio modal eliminar -->
+<!-- inicio modal agregar sueldo -->
 <form action="../registrar/registrar-sueldo" method="POST">
 <div class="modal fade" id="modal-eliminar-usuario" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog">
@@ -309,8 +311,6 @@ AGREGAR SUELDO
 </h4>
 </div>
 <div class="modal-body">
-<input type="hidden" name="id" value="<?php echo $id; ?>">
-<input type="hidden" name="tipo" value="03">
 <?php $template->display('crear-sueldo.tpl'); ?>
 </div>
 <div class="modal-footer">
@@ -329,7 +329,7 @@ Cerrar
 
 </div>
 </form>
-<!-- fin modal eliminar -->
+<!-- fin modal agregar sueldo -->
 
 
 </html>
