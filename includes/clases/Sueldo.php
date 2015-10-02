@@ -36,7 +36,8 @@ public function Registrar()
 {
 $db = new Conexion();
 
-$query = "SELECT * FROM sueldos_usuario where fecha_proceso='$this->fechaproceso'";
+$query = "SELECT * FROM sueldos_usuario where fecha_proceso='$this->fechaproceso'
+AND usuario_idusuario='$this->idusuario'";
 $result = $db->query($query);
 $numfilas = $result->num_rows;
 //echo "El n&uacute;mero de elementos es ".$numfilas;
