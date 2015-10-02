@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-09-30 15:14:58
+<?php /* Smarty version 3.1.24, created on 2015-10-02 11:57:14
          compiled from "../estilos/templates/editar-crear-usuario-1.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:6636560c34b24cd8b5_73615401%%*/
+/*%%SmartyHeaderCode:6708560ea95a388ca6_03588966%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e00be8eb7989faffb4a37b5126ea6d5bb6c1c42c' => 
     array (
       0 => '../estilos/templates/editar-crear-usuario-1.tpl',
-      1 => 1443640496,
+      1 => 1443801432,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6636560c34b24cd8b5_73615401',
+  'nocache_hash' => '6708560ea95a388ca6_03588966',
   'variables' => 
   array (
     'Id' => 0,
@@ -26,17 +26,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_560c34b2590a97_69921321',
+  'unifunc' => 'content_560ea95a57b363_46043162',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_560c34b2590a97_69921321')) {
-function content_560c34b2590a97_69921321 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_560ea95a57b363_46043162')) {
+function content_560ea95a57b363_46043162 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '6636560c34b24cd8b5_73615401';
+$_smarty_tpl->properties['nocache_hash'] = '6708560ea95a388ca6_03588966';
 ?>
 <input type="hidden"  name="id"  value="<?php echo $_smarty_tpl->tpl_vars['Id']->value;?>
 ">
-
 
 
 <div class="form-group">
@@ -103,18 +102,18 @@ USUARIO
 
 
 <div class="form-group">
-<label>ACTIVAR CAMBIO DE FECHA</label>
+<label>CAMBIO DE FECHA DE TRABAJO</label>
 <select name="permiso" class="form-control">
 <option value="<?php echo $_smarty_tpl->tpl_vars['Permiso']->value;?>
 ">
 <?php if ($_smarty_tpl->tpl_vars['Permiso']->value == 1) {?>
-NO
+DESACTIVADO
  <?php } else { ?>
-SI
+ACTIVADO
 <?php }?>
 </option>
-<option value="2">SI</option>
-<option value="1">NO</option>
+<option value="2">ACTIVAR</option>
+<option value="1">DESACTIVAR</option>
 </select>
 </div>	
 

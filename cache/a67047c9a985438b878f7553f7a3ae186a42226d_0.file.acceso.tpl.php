@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-09-30 12:10:41
+<?php /* Smarty version 3.1.24, created on 2015-10-02 13:01:39
          compiled from "./estilos/templates/acceso.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:26268560c0981764121_36527718%%*/
+/*%%SmartyHeaderCode:26367560eb873d24735_44405798%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a67047c9a985438b878f7553f7a3ae186a42226d' => 
     array (
       0 => './estilos/templates/acceso.tpl',
-      1 => 1443208314,
+      1 => 1443805285,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '26268560c0981764121_36527718',
+  'nocache_hash' => '26367560eb873d24735_44405798',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_560c09817e5ef6_75012750',
+  'unifunc' => 'content_560eb873e5f2d7_62769922',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_560c09817e5ef6_75012750')) {
-function content_560c09817e5ef6_75012750 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_560eb873e5f2d7_62769922')) {
+function content_560eb873e5f2d7_62769922 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '26268560c0981764121_36527718';
+$_smarty_tpl->properties['nocache_hash'] = '26367560eb873d24735_44405798';
 ?>
 <div class="modal-dialog">
 <form action="registrar/validar.php" method="POST" autocomplete="Off">
@@ -37,7 +37,7 @@ ADMINISTRADOR
 <input type="text"  name="usuario"  class="form-control" placeholder="Ingrese su Usuario" required autofocus>
 </div>
 <div class="form-group">
-<input type="text"  name="contrasena"class="form-control" placeholder="Ingrese su Contraseña" required>
+<input type="password"  name="contrasena"class="form-control" placeholder="Ingrese su Contraseña" required>
 </div>
 </div>
 <div class="modal-footer">

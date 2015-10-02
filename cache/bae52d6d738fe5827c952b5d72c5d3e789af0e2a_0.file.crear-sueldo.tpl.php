@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-09-30 17:35:49
+<?php /* Smarty version 3.1.24, created on 2015-10-02 12:01:49
          compiled from "../estilos/templates/crear-sueldo.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:10540560c55b5309fe3_27018093%%*/
+/*%%SmartyHeaderCode:14485560eaa6d3ce217_98504174%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bae52d6d738fe5827c952b5d72c5d3e789af0e2a' => 
     array (
       0 => '../estilos/templates/crear-sueldo.tpl',
-      1 => 1443648925,
+      1 => 1443801675,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10540560c55b5309fe3_27018093',
+  'nocache_hash' => '14485560eaa6d3ce217_98504174',
+  'variables' => 
+  array (
+    'Tipo' => 0,
+    'Id' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_560c55b53bbf42_83652073',
+  'unifunc' => 'content_560eaa6d7ab0e1_51837453',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_560c55b53bbf42_83652073')) {
-function content_560c55b53bbf42_83652073 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_560eaa6d7ab0e1_51837453')) {
+function content_560eaa6d7ab0e1_51837453 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '10540560c55b5309fe3_27018093';
+$_smarty_tpl->properties['nocache_hash'] = '14485560eaa6d3ce217_98504174';
 ?>
 <div class="form-group">
 <label>AÑO</label>
@@ -77,6 +82,14 @@ $_smarty_tpl->properties['nocache_hash'] = '10540560c55b5309fe3_27018093';
 <div class="form-group">
 <label>BONO DE PUNTUALIDAD</label>
 <input type="number" name="bono"  min="1" step="any" class="form-control" >
-</div><?php }
+</div>
+
+
+<input type="hidden" name="tipo" value="<?php echo $_smarty_tpl->tpl_vars['Tipo']->value;?>
+">
+
+
+<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['Id']->value;?>
+"><?php }
 }
 ?>

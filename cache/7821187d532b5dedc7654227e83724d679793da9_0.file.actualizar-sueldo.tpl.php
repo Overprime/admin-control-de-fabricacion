@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-09-30 20:12:17
+<?php /* Smarty version 3.1.24, created on 2015-10-02 11:56:34
          compiled from "../estilos/templates/actualizar-sueldo.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:30136560c7a61256d58_92085465%%*/
+/*%%SmartyHeaderCode:30681560ea93245a0b0_71902624%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7821187d532b5dedc7654227e83724d679793da9' => 
     array (
       0 => '../estilos/templates/actualizar-sueldo.tpl',
-      1 => 1443658333,
+      1 => 1443801052,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '30136560c7a61256d58_92085465',
+  'nocache_hash' => '30681560ea93245a0b0_71902624',
   'variables' => 
   array (
     'Mes' => 0,
@@ -27,13 +27,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_560c7a61362bf9_37225259',
+  'unifunc' => 'content_560ea9325d6086_79161455',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_560c7a61362bf9_37225259')) {
-function content_560c7a61362bf9_37225259 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_560ea9325d6086_79161455')) {
+function content_560ea9325d6086_79161455 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '30136560c7a61256d58_92085465';
+$_smarty_tpl->properties['nocache_hash'] = '30681560ea93245a0b0_71902624';
 ?>
 <center>
 <button class="btn btn-warning">
