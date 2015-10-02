@@ -142,7 +142,7 @@ else
 <td  style="mso-number-format:'@'"><?php echo $fila->proceso ?></td>
 <td  style="mso-number-format:'@'"><?php echo $fila->clasificacion ?></td>
 <td                               ><?php echo $fila->horashombre ?></td>
-<td style="mso-number-format:'@'">
+<td style="mso-number-format:'0.00'">
 <?php 
 if($fila->tipoclasificacion=='REGULAR')
 {
@@ -167,7 +167,7 @@ echo "no hay tipo";
 ?>
 </td>
 
-<td style="mso-number-format:'@'">
+<td style="mso-number-format:'0.00'">
 <?php 
 if($fila->tipoclasificacion=='REGULAR')
 {
@@ -191,8 +191,8 @@ echo "no hay tipo";
 }
 ?>
 </td>
-<td style="mso-number-format:'@'"><?php echo round($fila->costo_horas_mn,3) ?></td>
-<td style="mso-number-format:'@'"><?php echo round($fila->costo_horas_mn*$fila->horashombre,3) ?></td>
+<td style="mso-number-format:'0.00'"><?php echo round($fila->costo_horas_mn,3) ?></td>
+<td style="mso-number-format:'0.00'"><?php echo round($fila->costo_horas_mn*$fila->horashombre,3) ?></td>
 </tr>
 <?php
 }
