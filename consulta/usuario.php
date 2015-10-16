@@ -74,7 +74,7 @@ $fecha = new Fecha($_SESSION['id'],'');//clase  fecha de progreso
 <label>TIPO:</label>
 <select name="tipo" class="form-control" required>
 <option value="">[SELECCIONAR]</option>
-<option value="O2">ADMIN</option>
+<option value="02">ADMIN</option>
 <option value="03">USUARIO</option>
 </select>
 </div>
