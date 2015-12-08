@@ -9,6 +9,8 @@
 	    include('includes/clases/Clasificacion.php');
 	    include('includes/clases/Procesos.php');
 	    include('includes/clases/Horastrabajo.php');
+	    include('includes/clases/Usuario.php');
+	    include('includes/clases/Sueldo.php');
 		@session_start();
 		if (!$_SESSION){
 		echo '<script language = javascript>

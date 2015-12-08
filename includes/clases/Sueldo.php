@@ -84,7 +84,17 @@ public function Mostrar($posicion)
 {
 
 $db = new Conexion();
-$sql= $db->query("SELECT * FROM  usuario WHERE idusuario='$this->id';");
+$sql= $db->query("SELECT usuario_idusuario,
+round(vacaciones,2)as vacaciones,
+round(gratificacion,2)as gratificacion,
+round(cts,2)as cts,
+round(essalud,2)as essalud,
+round(sctr_pension,2)as sctr_pension,
+round(sctr_salud,2)as sctr_salud,
+round(sctr_vida,2)as sctr_vida,
+round(senati,2)as senati,
+round(desc_medico,2)as desc_medico
+ FROM  sueldos_usuario WHERE usuario_idusuario='$this->idusuario';");
 $dato = $db->recorrer($sql);
 echo $dato[$posicion];
 }
@@ -115,6 +125,32 @@ echo "<script>
       </script>";
 
 }
+
+
+
+
+public function ActualizarMonto($vacaciones,$gratificacion,$cts,$essalud,$sctr_pension,
+	$sctr_salud,$sctr_vida,$senati,$desc_medico)
+{
+
+$db = new Conexion();
+$sql= $db->query("UPDATE sueldos_usuario SET vacaciones='$vacaciones',
+gratificacion='$gratificacion',cts='$cts',essalud='$essalud',sctr_pension='$sctr_pension',
+sctr_salud='$sctr_salud',sctr_vida='$sctr_vida',senati='$senati',desc_medico='$desc_medico'
+WHERE usuario_idusuario='$this->idusuario'");
+echo "<script>
+       window.location='/admin-control-de-fabricacion/editar/montos-de-usuario?/='+$this->idusuario;
+      </script>";
+
+
+
+
+
+}
+
+
+
+
 
 
 }

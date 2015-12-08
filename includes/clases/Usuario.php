@@ -79,7 +79,7 @@ public function Mostrar($posicion)
 {
 
 $db = new Conexion();
-$sql= $db->query("SELECT * FROM  usuario WHERE idusuario='$this->id';");
+$sql= $db->query("SELECT * FROM  usuario WHERE idusuario='$this->idusuario';");
 $dato = $db->recorrer($sql);
 echo $dato[$posicion];
 }

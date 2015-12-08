@@ -4,7 +4,7 @@
 function Conectarse()
 
 {
-if(!($link=mysql_connect("192.168.1.28","root","sistemas")))
+if(!($link=mysql_connect("192.168.1.8","root","sistemas")))
 {
 
 echo"Presione F5 para Actualizar :P";

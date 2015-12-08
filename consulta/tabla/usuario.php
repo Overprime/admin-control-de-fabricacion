@@ -33,8 +33,8 @@ $numfilas = $result->num_rows;
 <th>ESTADO</th>
 <th>TIPO</th>
 <th>FECHA DE CREACIÓN</th>
-<th><a class="btn btn-primary t12" href="#"> <i class="fa fa-cogs"></i></a></th>
-
+<th><a class="btn btn-primary t12" href="#"><i class="fa fa-cogs"></i></a></th>
+<th><a class="btn btn-success t12" href="#"><i class="fa fa-usd"></i></a></th>
 </tr>
 </thead>
 <?php
@@ -51,6 +51,9 @@ $fila = $result->fetch_object();
 <td><a class="btn btn-primary t12" 
 href="../editar/creacion-de-usuario?/=<?php echo $fila->idusuario ?>">
   <i class="fa fa-cogs"></i></a></td>
+<td><a class="btn btn-success t12" 
+href="../editar/montos-de-usuario?/=<?php echo $fila->idusuario ?>">
+<i class="fa fa-usd"></i></a></td>
 
 </tr>
 <?php

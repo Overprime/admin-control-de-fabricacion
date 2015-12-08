@@ -7,7 +7,7 @@ $fecha = new Fecha($_SESSION['id'],'');//clase  fecha de progreso
 <!DOCTYPE html>
 <html>
 <head>
-<title>CLIENTE</title>
+<title>Usuario</title>
 <meta charset="UTF-8">
 <!--   CSS Y JS HEADER   -->
 <?php $template->display('estilos.tpl'); ?>

@@ -48,20 +48,20 @@ horashombre,r.descripciontrabajo,DATE_FORMAT(r.fechainicio,'%d/%m/%Y') AS fecha,
 p.descripcion as proceso,c.descripcion as clasificacion,
 su.sueldo_basico AS  sueldobasico,
 (su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)as  'totalingreso',
-((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * 47.01)/100) AS  sueldo2,
+((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) AS  sueldo2,
 h.horas_mes as 'horasdetrabajo',
- (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * 47.01)/100) / h.horas_mes) as 'regular',
-  (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * 47.01)/100) / h.horas_mes)*1.25 as 'he25',
-    (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * 47.01)/100) / h.horas_mes)*1.35 as 'he35',
-      (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * 47.01)/100) / h.horas_mes)*2 as 'he100',
+ (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) / h.horas_mes) as 'regular',
+  (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) / h.horas_mes)*1.25 as 'he25',
+    (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) / h.horas_mes)*1.35 as 'he35',
+      (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) / h.horas_mes)*2 as 'he100',
       c.tipo as 'tipoclasificacion',h.costo_horas_mn
  from reporte AS r  INNER JOIN usuario AS u ON 
 r.usuario_idusuario=u.idusuario INNER JOIN  area AS a ON 
 u.area_idarea=a.idarea INNER JOIN procesos AS p ON  
 r.procesos_idprocesos=p.idprocesos INNER JOIN clasificacion AS c ON 
-r.clasificacion_idclasificacion=c.idclasificacion  INNER JOIN horas_trabajo as h
-ON r.fecha_proceso=h.fecha_proceso  INNER JOIN  sueldos_usuario su on
-r.usuario_idusuario=su.usuario_idusuario AND r.fecha_proceso=su.fecha_proceso
+r.clasificacion_idclasificacion=c.idclasificacion  left JOIN horas_trabajo as h
+ON DATE_FORMAT(r.fechainicio,'%Y%m')=h.fecha_proceso  left JOIN  sueldos_usuario su on
+r.usuario_idusuario=su.usuario_idusuario  AND DATE_FORMAT(r.fechainicio,'%Y%m')=su.fecha_proceso 
 WHERE  r.fechainicio  BETWEEN  '$Fechainicio' AND '$Fechafin'
 ORDER BY r.horastrabajo ";
 $result = $db->query($query);
