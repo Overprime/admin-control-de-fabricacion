@@ -50,12 +50,32 @@ su.sueldo_basico AS  sueldobasico,
 (su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)as  'totalingreso',
 ((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) AS  sueldo2,
 h.horas_mes as 'horasdetrabajo',
- (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) / h.horas_mes) as 'regular',
-  (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) / h.horas_mes)*1.25 as 'he25',
-    (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) / h.horas_mes)*1.35 as 'he35',
-      (((su.sueldo_basico+su.bonificacion+su.asignacion_familiar+su.bono_puntualidad)+(su.sueldo_basico * (su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100) / h.horas_mes)*2 as 'he100',
-      c.tipo as 'tipoclasificacion',h.costo_horas_mn
- from reporte AS r  INNER JOIN usuario AS u ON 
+ ((
+(su.sueldo_basico + su.bonificacion) +
+(
+((su.sueldo_basico + su.bonificacion)*
+(su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100)+
+(su.asignacion_familiar) ) /h.horas_mes)as 'regular',
+((
+(su.sueldo_basico + su.bonificacion) +
+(
+((su.sueldo_basico + su.bonificacion)*
+(su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100)+
+(su.asignacion_familiar) ) /h.horas_mes)*1.25 as 'he25',
+((
+(su.sueldo_basico + su.bonificacion) +
+(
+((su.sueldo_basico + su.bonificacion)*
+(su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100)+
+(su.asignacion_familiar) ) /h.horas_mes)*1.35 as 'he35',
+((
+(su.sueldo_basico + su.bonificacion) +
+(
+((su.sueldo_basico + su.bonificacion)*
+(su.vacaciones+su.gratificacion+su.cts+su.essalud+su.sctr_pension+su.sctr_salud+su.sctr_vida+su.senati+su.desc_medico))/100)+
+(su.asignacion_familiar) ) /h.horas_mes)*2 as 'he100',
+c.tipo as 'tipoclasificacion',h.costo_horas_mn
+from reporte AS r  INNER JOIN usuario AS u ON 
 r.usuario_idusuario=u.idusuario INNER JOIN  area AS a ON 
 u.area_idarea=a.idarea INNER JOIN procesos AS p ON  
 r.procesos_idprocesos=p.idprocesos INNER JOIN clasificacion AS c ON 
@@ -104,16 +124,16 @@ $fila = $result->fetch_object();
 <td  style="mso-number-format:'@'">  
 <?php 
 if ($fila->cencos=="010101")
- {
-   echo"010100";
- } 
-else if ($fila->cencos="020101")
 {
-   echo "020100";
+echo"010100";
+} 
+else if ($fila->cencos=="020101")
+{
+echo "020100";
 }
 else
 {
-	echo "no registrado";
+echo "no registrado";
 }
 ?>
 
@@ -121,16 +141,16 @@ else
 <td  style="mso-number-format:'@'">
 <?php 
 if ($fila->cencos=="010101")
- {
-   echo "EQUIPOS DE PRODUCCIÓN";
- } 
-else if ($fila->cencos="020101")
 {
-   echo "EQUIPOS DE EXPLORACIÓN";
+echo "EQUIPOS DE PRODUCCIÓN";
+} 
+else if ($fila->cencos=="020101")
+{
+echo "EQUIPOS DE EXPLORACIÓN";
 }
 else
 {
-	echo "no registrado";
+echo "no registrado";
 }
 ?>
 
@@ -141,24 +161,24 @@ else
 <td                               ><?php echo $fila->fecha ?></td>
 <td  style="mso-number-format:'@'"><?php echo $fila->proceso ?></td>
 <td  style="mso-number-format:'@'"><?php echo $fila->clasificacion ?></td>
-<td                               ><?php echo $fila->horashombre ?></td>
+<td                               ><?php echo round($fila->horashombre,2) ?></td>
 <td style="mso-number-format:'0.00'">
 <?php 
 if($fila->tipoclasificacion=='REGULAR')
 {
- echo round($fila->regular,3);
+echo round($fila->regular,2);
 } 
 else if ($fila->tipoclasificacion=='HE25')
 {
- echo round($fila->he25,3);
+echo round($fila->he25,2);
 } 
 else if ($fila->tipoclasificacion=='HE35')
 {
- echo round($fila->he35,3);
+echo round($fila->he35,2);
 } 
 else if ($fila->tipoclasificacion=='HE100')
 {
- echo round($fila->he100,3);
+echo round($fila->he100,2);
 } 
 else
 {
@@ -171,19 +191,19 @@ echo "no hay tipo";
 <?php 
 if($fila->tipoclasificacion=='REGULAR')
 {
- echo  round($fila->regular*$fila->horashombre,3);
+echo  round($fila->regular*$fila->horashombre,2);
 } 
 else if ($fila->tipoclasificacion=='HE25')
 {
- echo  round($fila->he25*$fila->horashombre,3);
+echo  round($fila->he25*$fila->horashombre,2);
 } 
 else if ($fila->tipoclasificacion=='HE35')
 {
- echo  round($fila->he35*$fila->horashombre,3);
+echo  round($fila->he35*$fila->horashombre,2);
 } 
 else if ($fila->tipoclasificacion=='HE100')
 {
- echo  round($fila->he100*$fila->horashombre,3);
+echo  round($fila->he100*$fila->horashombre,2);
 } 
 else
 {
@@ -191,8 +211,8 @@ echo "no hay tipo";
 }
 ?>
 </td>
-<td style="mso-number-format:'0.00'"><?php echo round($fila->costo_horas_mn,3) ?></td>
-<td style="mso-number-format:'0.00'"><?php echo round($fila->costo_horas_mn*$fila->horashombre,3) ?></td>
+<td style="mso-number-format:'0.00'"><?php echo round($fila->costo_horas_mn,2) ?></td>
+<td style="mso-number-format:'0.00'"><?php echo round($fila->costo_horas_mn*$fila->horashombre,2) ?></td>
 </tr>
 <?php
 }

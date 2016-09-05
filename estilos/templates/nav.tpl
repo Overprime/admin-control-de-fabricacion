@@ -32,6 +32,10 @@ Home</a>
 <li>
 <a href="/admin-control-de-fabricacion/consulta/horas-mensuales">Registro de Horas Mensuales</a>
 </li>
+<li class="divider"></li>
+<li>
+<a href="/admin-control-de-fabricacion/pages/habilitar-ot">Habilitar Ot Servicios</a>
+</li>
 </ul>
 </li>
 </ul>

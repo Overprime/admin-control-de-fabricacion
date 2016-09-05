@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-10-01 09:39:00
+<?php /* Smarty version 3.1.24, created on 2015-12-16 09:19:12
          compiled from "../estilos/templates/nav.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1746159712560d4584a2ca05_16625131%%*/
+/*%%SmartyHeaderCode:81917394567172e02ffdc3_89183322%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,21 +9,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '21ea19c1f04cb0734ea431b471a19a6f92b9962a' => 
     array (
       0 => '../estilos/templates/nav.tpl',
-      1 => 1443709681,
+      1 => 1450275450,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1746159712560d4584a2ca05_16625131',
+  'nocache_hash' => '81917394567172e02ffdc3_89183322',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_560d4584a40f61_68876493',
+  'unifunc' => 'content_567172e0340925_61134097',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_560d4584a40f61_68876493')) {
-function content_560d4584a40f61_68876493 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_567172e0340925_61134097')) {
+function content_567172e0340925_61134097 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_date_format')) require_once '/var/www/admin-control-de-fabricacion/includes/libs/plugins/modifier.date_format.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '1746159712560d4584a2ca05_16625131';
+$_smarty_tpl->properties['nocache_hash'] = '81917394567172e02ffdc3_89183322';
 ?>
 <nav class="navbar navbar-default" role="navigation">
 <div class="navbar-header">
@@ -58,6 +58,10 @@ Home</a>
 <li class="divider"></li>
 <li>
 <a href="/admin-control-de-fabricacion/consulta/horas-mensuales">Registro de Horas Mensuales</a>
+</li>
+<li class="divider"></li>
+<li>
+<a href="/admin-control-de-fabricacion/pages/habilitar-ot">Habilitar Ot Servicios</a>
 </li>
 </ul>
 </li>
